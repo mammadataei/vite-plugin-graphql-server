@@ -1,0 +1,59 @@
+{
+  "name": "vite-plugin-graphql-server",
+  "version": "1.0.0",
+  "description": "Bootstrap a local GraphQL server in your Vite project",
+  "author": "Mohammad Ataei",
+  "license": "MIT",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mammadataei/vite-plugin-graphql-server/"
+  },
+  "bugs": {
+    "url": "https://github.com/mammadataei/vite-plugin-graphql-server/issues"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "test": "vitest --ui --open=false",
+    "coverage": "vitest run --coverage",
+    "format": "prettier --write . && pnpm lint --fix",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --fix",
+    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "@vitest/coverage-c8": "^0.25.0",
+    "@vitest/ui": "^0.25.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.8.1",
+    "typescript": "^4.8.4",
+    "unbuild": "^1.0.0",
+    "vite": "^3.2.2",
+    "vitest": "^0.25.0"
+  }
+}
