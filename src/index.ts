@@ -1,7 +1,7 @@
 import type { PluginOption } from 'vite'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import type { GraphQLServerPluginOptions } from './types'
-import { handlerGraphQLRequest, normalizeURLPath } from './utils'
+import { handleGraphQLRequest, normalizeURLPath } from './utils'
 
 export default function <TContext>(
   options: GraphQLServerPluginOptions<TContext>,
@@ -21,7 +21,7 @@ export default function <TContext>(
 
       server.middlewares.use(
         normalizeURLPath(options.server?.path ?? '/__graphql'),
-        handlerGraphQLRequest(schema),
+        handleGraphQLRequest(schema, options.contextValue),
       )
     },
   }

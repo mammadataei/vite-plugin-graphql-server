@@ -4,7 +4,10 @@ import type { GraphQLSchema } from 'graphql'
 import type { IncomingMessage, ServerResponse } from 'http'
 import { RequestPayload } from './types'
 
-export function handlerGraphQLRequest(schema: GraphQLSchema) {
+export function handleGraphQLRequest(
+  schema: GraphQLSchema,
+  contextValue: unknown,
+) {
   return async (
     req: IncomingMessage,
     res: ServerResponse,
@@ -22,6 +25,7 @@ export function handlerGraphQLRequest(schema: GraphQLSchema) {
     const result = await graphql({
       schema,
       source: body.query,
+      contextValue,
     })
 
     res.setHeader('Content-Type', 'application/json')

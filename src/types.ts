@@ -34,6 +34,8 @@ export interface GraphQLServerPluginOptions<TContext> {
     path?: string
   }
 
+  contextValue?: TContext
+
   /**
    * GraphQL schema configurations.
    */
