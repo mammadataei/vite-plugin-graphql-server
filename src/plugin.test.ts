@@ -146,3 +146,43 @@ it('should throw error if `schema.resolvers` not provided in the configuration',
     '[Vite GraphQL Server]: Error: `schema.typeDefs` and `schema.resolvers` are required configurations.',
   )
 })
+
+it('should support `contextValue` configuration', async () => {
+  const spy = vi.fn()
+  const contextValue = { message: 'Hello World' }
+
+  await createServer([
+    plugin({
+      contextValue,
+      schema: {
+        typeDefs: gql`
+          type Query {
+            hello: String!
+          }
+        `,
+        resolvers: {
+          Query: {
+            hello: (_, __, ctx) => {
+              spy(ctx)
+              return ctx.message
+            },
+          },
+        },
+      },
+    }),
+  ])
+
+  const response = await request(gql`
+    query {
+      hello
+    }
+  `)
+
+  expect(spy).toHaveBeenCalledWith(contextValue)
+  expect(response).toEqual<ExecutionResult>({
+    errors: undefined,
+    data: {
+      hello: 'Hello World',
+    },
+  })
+})
