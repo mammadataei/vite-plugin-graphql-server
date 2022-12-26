@@ -56,12 +56,12 @@
     "prettier": "2.8.1",
     "typescript": "^4.8.4",
     "unbuild": "^1.0.0",
-    "vite": "^3.2.2",
+    "vite": "^4.0.0",
     "vitest": "^0.26.0"
   },
   "peerDependencies": {
     "graphql": "^16.0.0",
-    "vite": "^3.0.0"
+    "vite": "^3.0.0 || ^4.0.0"
   },
   "dependencies": {
     "@graphql-tools/schema": "^9.0.12"
