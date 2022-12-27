@@ -34,6 +34,9 @@ import GraphqlServer from 'vite-plugin-graphql-server'
 export default defineConfig({
   plugins: [
     plugin({
+      contextValue: {
+        // Any context value that you want to be available in your resolvers
+      },
       schema: {
         typeDefs: `
           type Query {
