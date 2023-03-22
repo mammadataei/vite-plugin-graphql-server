@@ -186,3 +186,95 @@ it('should support `contextValue` configuration', async () => {
     },
   })
 })
+
+it('should support schema with query and mutation `variables`', async () => {
+  const spy = vi.fn()
+
+  await createServer([
+    plugin({
+      schema: {
+        typeDefs: gql`
+          input MessageInput {
+            content: String
+          }
+
+          type Message {
+            content: String
+          }
+
+          type Query {
+            getMessage(id: ID!): Message
+          }
+
+          type Mutation {
+            createMessage(input: MessageInput): Message
+          }
+        `,
+        resolvers: {
+          Query: {
+            getMessage: (_, args) => {
+              spy(args)
+              return {
+                content: `Message: ${args.id}`,
+              }
+            },
+          },
+          Mutation: {
+            createMessage: (_, args) => {
+              spy(args)
+              return {
+                content: `Message: ${args.input.content}`,
+              }
+            },
+          },
+        },
+      },
+    }),
+  ])
+
+  const query = await request(
+    gql`
+      query getMessage($id: ID!) {
+        getMessage(id: $id) {
+          content
+        }
+      }
+    `,
+    {
+      id: 'Hello-World',
+    },
+  )
+
+  expect(query).toEqual<ExecutionResult>({
+    errors: undefined,
+    data: {
+      getMessage: {
+        content: 'Message: Hello-World',
+      },
+    },
+  })
+
+  const mutation = await request(
+    gql`
+      mutation createMessage($input: MessageInput!) {
+        createMessage(input: $input) {
+          content
+        }
+      }
+    `,
+    {
+      input: {
+        content: 'Hello World',
+      },
+    },
+  )
+
+  expect(mutation).toEqual<ExecutionResult>({
+    errors: undefined,
+    data: {
+      createMessage: {
+        content: 'Message: Hello World',
+      },
+    },
+  })
+})
