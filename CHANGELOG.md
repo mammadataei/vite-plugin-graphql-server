@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/mammadataei/vite-plugin-graphql-server/compare/v1.1.0...v1.2.0) (2023-03-28)
+
+
+### Features
+
+* add support for query and mutation variables ([#18](https://github.com/mammadataei/vite-plugin-graphql-server/issues/18)) ([f618973](https://github.com/mammadataei/vite-plugin-graphql-server/commit/f6189733085f7d0c98d0767eac9ec0662d63c874))
+
 ## [1.1.0](https://github.com/mammadataei/vite-plugin-graphql-server/compare/v1.0.0...v1.1.0) (2022-12-27)
 
 
