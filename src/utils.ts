@@ -25,6 +25,7 @@ export function handleGraphQLRequest(
     const result = await graphql({
       schema,
       source: body.query,
+      variableValues: body.variables,
       contextValue,
     })
 
