@@ -4,8 +4,10 @@ export default defineConfig({
   test: {
     globals: true,
     includeSource: ['src/**/*.{js,ts,jsx,tsx}'],
-    deps: {
-      fallbackCJS: true,
+    server: {
+      deps: {
+        fallbackCJS: true,
+      },
     },
   },
 })
