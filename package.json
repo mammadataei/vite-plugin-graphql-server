@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-graphql-server",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Bootstrap a local GraphQL server in your Vite project",
   "author": "Mohammad Ataei",
   "license": "MIT",
