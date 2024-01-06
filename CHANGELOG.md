@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1](https://github.com/mammadataei/vite-plugin-graphql-server/compare/v1.2.0...v1.2.1) (2024-01-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @graphql-tools/schema to v10 ([#23](https://github.com/mammadataei/vite-plugin-graphql-server/issues/23)) ([2db11d1](https://github.com/mammadataei/vite-plugin-graphql-server/commit/2db11d15cc3b0be6e514e03a1997838250cb829a))
+* update peer dependencies ([#44](https://github.com/mammadataei/vite-plugin-graphql-server/issues/44)) ([593f997](https://github.com/mammadataei/vite-plugin-graphql-server/commit/593f997b2d5c33d52ba85d23dfea02c54645d27a))
+
 ## [1.2.0](https://github.com/mammadataei/vite-plugin-graphql-server/compare/v1.1.0...v1.2.0) (2023-03-28)
 
 
