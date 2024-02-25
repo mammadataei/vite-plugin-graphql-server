@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@graphql-tools/schema':
     specifier: ^10.0.2
-    version: 10.0.2(graphql@16.8.1)
+    version: 10.0.3(graphql@16.8.1)
 
 devDependencies:
   '@commitlint/cli':
@@ -689,32 +689,32 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@graphql-tools/merge@9.0.1(graphql@16.8.1):
-    resolution: {integrity: sha512-hIEExWO9fjA6vzsVjJ3s0cCQ+Q/BEeMVJZtMXd7nbaVefVy0YDyYlEkeoYYNV3NVVvu1G9lr6DM1Qd0DGo9Caw==}
+  /@graphql-tools/merge@9.0.3(graphql@16.8.1):
+    resolution: {integrity: sha512-FeKv9lKLMwqDu0pQjPpF59GY3HReUkWXKsMIuMuJQOKh9BETu7zPEFUELvcw8w+lwZkl4ileJsHXC9+AnsT2Lw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.12(graphql@16.8.1)
+      '@graphql-tools/utils': 10.1.0(graphql@16.8.1)
       graphql: 16.8.1
       tslib: 2.6.2
     dev: false
 
-  /@graphql-tools/schema@10.0.2(graphql@16.8.1):
-    resolution: {integrity: sha512-TbPsIZnWyDCLhgPGnDjt4hosiNU2mF/rNtSk5BVaXWnZqvKJ6gzJV4fcHcvhRIwtscDMW2/YTnK6dLVnk8pc4w==}
+  /@graphql-tools/schema@10.0.3(graphql@16.8.1):
+    resolution: {integrity: sha512-p28Oh9EcOna6i0yLaCFOnkcBDQECVf3SCexT6ktb86QNj9idnkhI+tCxnwZDh58Qvjd2nURdkbevvoZkvxzCog==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/merge': 9.0.1(graphql@16.8.1)
-      '@graphql-tools/utils': 10.0.12(graphql@16.8.1)
+      '@graphql-tools/merge': 9.0.3(graphql@16.8.1)
+      '@graphql-tools/utils': 10.1.0(graphql@16.8.1)
       graphql: 16.8.1
       tslib: 2.6.2
       value-or-promise: 1.0.12
     dev: false
 
-  /@graphql-tools/utils@10.0.12(graphql@16.8.1):
-    resolution: {integrity: sha512-+yS1qlFwXlwU3Gv8ek/h2aJ95quog4yF22haC11M0zReMSTddbGJZ5yXKkE3sXoY2BcL1utilSFjylJ9uXpSNQ==}
+  /@graphql-tools/utils@10.1.0(graphql@16.8.1):
+    resolution: {integrity: sha512-wLPqhgeZ9BZJPRoaQbsDN/CtJDPd/L4qmmtPkjI3NuYJ39x+Eqz1Sh34EAGMuDh+xlOHqBwHczkZUpoK9tvzjw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
