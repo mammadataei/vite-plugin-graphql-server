@@ -66,5 +66,5 @@
   "dependencies": {
     "@graphql-tools/schema": "^10.0.2"
   },
-  "packageManager": "pnpm@8.13.1"
+  "packageManager": "pnpm@8.15.5"
 }
